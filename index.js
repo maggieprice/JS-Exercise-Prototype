@@ -104,10 +104,10 @@ Baby.prototype.play = function(){
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1.In the global scope, it represents the console object.
+  2. It refers to the object before the dot that has called a function. 
+  3. You can use it to call the new oject created by a constructor function. 
+  4. You can explicitly call objects when using the call and apply methods. 
 */
 
 
