@@ -39,9 +39,23 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
-
+function Person(name, age) {
+  const stomach = [];
+  this.stomach = stomach,
+    this.name = name,
+    this.age = age
+  }
+Person.prototype.eat = function(someFood){
+  if (this.stomach.length < 10){ return this.stomach.push(someFood); 
 }
+ }
+
+Person.prototype.poop = function(){
+  return this.stomach.length = 0; }
+
+Person.prototype.toString = function(){
+   return  `${this.name}, ${this.age}` ; 
+} 
 
 /*
   TASK 2
@@ -57,10 +71,16 @@ function Person() {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-
+function Car(model, milesPerGallon) {
+  this.model = model,
+  this.milesPerGallon = milesPerGallon,
+  this.tank = 0,
+  this.odometer = 0;
 }
-
+Car.prototype.fill = function(gallons) {
+this.tank = this.tank + gallons; 
+ }
+ 
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -68,18 +88,26 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
-
+function Baby(name, age, favoriteToy) {
+  Person.call(this)
+    this.name = name,
+    this.age = age, 
+    this.favoriteToy = favoriteToy
 }
+Baby.prototype=Object.create(Person.prototype); 
+Baby.prototype.play = function(){
+  return `Playng with ${this.favoriteToy}`;
+};
+
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1.In the global scope, it represents the console object.
+  2. It refers to the object before the dot that has called a function. 
+  3. You can use it to call the new oject created by a constructor function. 
+  4. You can explicitly call objects when using the call and apply methods. 
 */
 
 
